@@ -14,16 +14,18 @@ class HtmlOutputer(object):
         fout.write('<html>')
         fout.write('<head><meta charset="utf-8"></head>')  # 防乱码
         fout.write('<body>')
-        fout.write('<table>')
-
+        # fout.write('<table>')
+        # fout.write('<tr>'
+        #            '<th>url</th>'
+        #            '<th>title</th>'
+        #            '<th>text</th>'
+        #            '</tr>')
         # ascii
         for data in self.datas:
-            fout.write('<tr>')
-            fout.write('<td>%s</td>' % data['url'])
-            fout.write('<td>%s</td>' % data['title'])
-            fout.write('<td>%s</td>' % data['summary'])
-            fout.write('</tr>')
+            fout.write('<p>title: %s</p>' % data['title'].encode('utf-8'))
+            fout.write('<p>url: %s</p>' % (data['url']).encode('utf-8'))
+            fout.write('<p>text: %s</p>' % data['summary'].encode('utf-8'))
 
-        fout.write('</table>')
+        # fout.write('</table>')
         fout.write('</body>')
         fout.write('</html>')
