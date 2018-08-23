@@ -1,9 +1,9 @@
 # coding:utf8
 # 调度程序
-from baike_spider import html_downloader
-from baike_spider import html_outputer
-from baike_spider import html_parser
-from baike_spider import url_manager
+import html_downloader
+import html_outputer
+import html_parser
+import url_manager
 
 #思路先搭建好框架再补全代码
 

@@ -1,7 +1,7 @@
 # coding:utf8
 from  bs4 import BeautifulSoup
 import re
-import urllib.parse
+import urlparse
 
 
 class HtmlParser(object):
@@ -20,7 +20,7 @@ class HtmlParser(object):
         links = soup.find_all('a', href=re.compile(r'/item/'))                          #findall方法获取数据中的url,利用正则表达式
         for link in links:
             new_url = link['href']                                                      #匹配到后用属性href拿url出来
-            new_full_url = urllib.parse.urljoin(page_url, new_url)                      #拼接成完整的url
+            new_full_url = urlparse.urljoin(page_url, new_url)                      #拼接成完整的url
             new_urls.add(new_full_url)
         return new_urls
 

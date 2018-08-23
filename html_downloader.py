@@ -1,6 +1,7 @@
-#coding:utf8
+# coding:utf8
 
-from urllib import request
+import urllib
+
 
 class HtmlDownloader(object):
 
@@ -8,9 +9,9 @@ class HtmlDownloader(object):
         if url is None:
             return None
 
-        response=request.urlopen(url)          #下载器的第一种方法，得到response
+        response = urllib.urlopen(url)  # 下载器的第一种方法，得到response
 
-        if response.getcode()!=200:
+        if response.getcode() != 200:
             return None
 
         return response.read()
